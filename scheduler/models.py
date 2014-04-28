@@ -296,10 +296,7 @@ class File(models.Model):
 
 
 
-# --- Newforms Admin Section
 from django.contrib import admin
-
-scheduler_admin_site = admin.AdminSite()
 
 
 class RecurrenceAdmin(admin.ModelAdmin):
@@ -314,6 +311,6 @@ class TaskAdmin(admin.ModelAdmin):
     ordering = ('description',)
 
 
-scheduler_admin_site.register(Recurrence, RecurrenceAdmin)
-scheduler_admin_site.register(Task, TaskAdmin)
+admin.site.register(Recurrence, RecurrenceAdmin)
+admin.site.register(Task, TaskAdmin)
 
