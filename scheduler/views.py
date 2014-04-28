@@ -8,7 +8,7 @@ from django.forms.util import ValidationError
 from django.forms import widgets
 import calendar, datetime
 from django.core.exceptions import PermissionDenied
-
+from django.core.context_processors import csrf
 
 
 class NewScheduleForm(forms.Form):
@@ -62,7 +62,7 @@ def show_scheduler(request):
     c = Context({'scheduled_set': scheduled_set,
                  'completed_set': completed_set,
                 })
-
+    c.update(csrf(request))
     return HttpResponse(t.render(c))
 
 
