@@ -10,6 +10,7 @@
 <form method="POST" action=".">
 <div class="submit-row">
 <h1 class="float-left">Add scheduled task</h1>
+{% csrf_token %}
 <input type="submit" value="&nbsp;&nbsp;Cancel&nbsp;&nbsp;" name="_cancel"/>
 <input type="submit" value="&nbsp;&nbsp;Save&nbsp;&nbsp;" name="_save" class="default"/>
 </div>

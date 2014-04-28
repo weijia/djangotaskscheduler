@@ -2,9 +2,10 @@ from scheduler.models import *
 from scheduler.scheduler_settings import SCHEDULER_FILE_WEBROOT, SCHEDULER_FILE_DOWNLOADS
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader, Context
-from django import newforms as forms
-from django.newforms.util import ValidationError
-from django.newforms import widgets
+#from django import newforms as forms
+from django import forms
+from django.forms.util import ValidationError
+from django.forms import widgets
 import calendar, datetime
 from django.core.exceptions import PermissionDenied
 

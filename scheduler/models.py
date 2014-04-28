@@ -5,8 +5,7 @@ from math import ceil
 from datetime import *
 import time
 import os
-from scheduler.scheduler_settings import *
-
+from django.conf import settings
 
 
 INTERVAL_TYPES = {
@@ -276,7 +275,7 @@ class File(models.Model):
         return self.filepath
 
     def createFile(self):
-        dir = SCHEDULER_FILE_ROOT+'/'+str(self.schedule_id)
+        dir = settings.SCHEDULER_FILE_ROOT+'/'+str(self.schedule_id)
         try:
             os.makedirs(dir, 0777)
             self.filepath = dir
